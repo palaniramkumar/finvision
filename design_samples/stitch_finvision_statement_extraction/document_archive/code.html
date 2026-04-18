@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Archive | Precision Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f2f0f2",
+                        "surface-tint": "#4f6073",
+                        "on-secondary-fixed-variant": "#41474f",
+                        "primary-container": "#1a2b3c",
+                        "outline-variant": "#c4c6cd",
+                        "surface-container-highest": "#e4e2e3",
+                        "on-tertiary-container": "#619d7f",
+                        "tertiary": "#001a0f",
+                        "secondary-container": "#dde3ed",
+                        "on-tertiary-fixed-variant": "#0e5138",
+                        "primary-fixed": "#d2e4fb",
+                        "on-background": "#1b1c1d",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dbd9db",
+                        "outline": "#74777d",
+                        "on-surface": "#1b1c1d",
+                        "tertiary-fixed-dim": "#95d4b3",
+                        "inverse-surface": "#303032",
+                        "surface-container-high": "#e9e7e9",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#002114",
+                        "on-surface-variant": "#44474c",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#595f67",
+                        "surface-container": "#efedef",
+                        "background": "#fbf9fa",
+                        "tertiary-fixed": "#b1f0ce",
+                        "on-secondary-container": "#5f656d",
+                        "secondary-fixed-dim": "#c1c7d1",
+                        "tertiary-container": "#00311f",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#0b1d2d",
+                        "primary": "#041627",
+                        "primary-fixed-dim": "#b7c8de",
+                        "on-primary-fixed-variant": "#38485a",
+                        "surface-container-low": "#f5f3f4",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#161c23",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#dde3ed",
+                        "on-primary-container": "#8192a7",
+                        "surface-variant": "#e4e2e3",
+                        "inverse-primary": "#b7c8de",
+                        "error-container": "#ffdad6",
+                        "surface": "#fbf9fa",
+                        "surface-bright": "#fbf9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full flex justify-between items-center px-8 h-16 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl z-50 transition-all duration-300 ease-in-out no-border tonal-layering">
+<div class="flex items-center gap-12">
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Precision Ledger</span>
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low rounded-xl border-none focus:ring-2 focus:ring-primary-container text-sm transition-all duration-300" placeholder="Search archive..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-50">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-50">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden ml-2 ring-2 ring-surface-container-high">
+<img alt="User profile" data-alt="close-up professional headshot of a financial analyst in a modern office setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4k1SfP5JwrI39V6ARsgwlHIy3bjmOFysbcNXEv_vXEq-GP62_4QPgfdqNn7GkuRFFvs4QygvITRuhgDbgqbf41fFOti83iZovh_rzroplnYaZYvbFPJxNspKkvrXds7FRog7bQPipRoThbA11FHkizpSzp3x8dEX0qs4g0Zkr9jmzHYpmIQfOKEZQN9jX61Amx89Z1qFOcCS6GrwbIJbbc6JF5iJZZkQ-ETE73q0WhR1s3-t8c3qzV1FJpxyN1dZP3iI3knKSAXUC"/>
+</div>
+</div>
+</header>
+<div class="flex min-h-[calc(100vh-4rem)]">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 bg-slate-100 dark:bg-slate-900 w-64 z-40 bg-surface-container-low">
+<div class="px-6 mb-8 mt-16">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary-fixed">layers</span>
+</div>
+<div>
+<p class="text-lg font-bold text-slate-900 dark:text-slate-50 font-headline leading-tight">Ledger Admin</p>
+<p class="text-xs text-secondary font-medium uppercase tracking-wider">Precision Extract</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-xl transition-transform scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-xl transition-transform scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined">splitscreen</span>
+<span class="font-medium">Review</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-xl transition-transform scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-medium">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-emerald-700 dark:text-emerald-400 font-bold border-r-4 border-emerald-600 bg-emerald-50/50 dark:bg-emerald-900/20 rounded-l-xl transition-transform scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-medium">Archive</span>
+</a>
+</nav>
+<div class="px-6 mb-4">
+<button class="w-full py-3 px-4 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg shadow-primary/10 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Upload Document
+                </button>
+</div>
+<div class="px-4 pt-4 border-t border-outline-variant/10">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-xl transition-transform scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-medium">Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-xl transition-transform scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-medium">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 flex-1 p-8">
+<!-- Header Section with Asymmetric Layout -->
+<div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
+<div class="max-w-2xl">
+<h1 class="text-4xl font-extrabold text-primary mb-2 tracking-tight">History &amp; Archive</h1>
+<p class="text-secondary font-medium text-lg">Manage and review your complete repository of processed financial data with surgical precision.</p>
+</div>
+<div class="flex flex-wrap gap-3 pt-2">
+<span class="px-4 py-2 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-sm font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-base">verified</span>
+                        1,284 Documents Stored
+                    </span>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface rounded-full text-sm font-bold flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-base">filter_list</span>
+                        Filter Archive
+                    </button>
+</div>
+</div>
+<!-- Dashboard Style Metrics (Bento Style) -->
+<div class="grid grid-cols-12 gap-6 mb-12">
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-full p-6 flex items-center justify-between shadow-sm">
+<div class="flex gap-12">
+<div>
+<p class="text-xs font-bold text-secondary uppercase tracking-widest mb-1">Extraction Accuracy</p>
+<p class="text-2xl font-bold text-primary font-headline">99.8%</p>
+</div>
+<div class="w-px h-full bg-outline-variant/30"></div>
+<div>
+<p class="text-xs font-bold text-secondary uppercase tracking-widest mb-1">Storage Utilized</p>
+<p class="text-2xl font-bold text-primary font-headline">14.2 GB</p>
+</div>
+<div class="w-px h-full bg-outline-variant/30"></div>
+<div>
+<p class="text-xs font-bold text-secondary uppercase tracking-widest mb-1">Active Batches</p>
+<p class="text-2xl font-bold text-primary font-headline">03</p>
+</div>
+</div>
+<div class="hidden sm:block">
+<div class="h-12 w-48 bg-gradient-to-r from-emerald-500/10 to-emerald-500/0 rounded-lg flex items-center px-4">
+<div class="w-full bg-emerald-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-emerald-600 h-full w-[85%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 bg-primary text-on-primary rounded-full p-6 flex items-center justify-between px-10">
+<div>
+<p class="text-xs font-bold text-on-primary-container uppercase tracking-widest mb-1">Last Sync</p>
+<p class="text-lg font-semibold font-headline">2 mins ago</p>
+</div>
+<span class="material-symbols-outlined text-3xl text-tertiary-fixed">sync</span>
+</div>
+</div>
+<!-- Archive List -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<div class="p-6 flex flex-wrap justify-between items-center gap-4">
+<div class="flex gap-4">
+<button class="px-4 py-1.5 rounded-lg bg-surface-container-lowest text-primary text-sm font-bold shadow-sm">All Docs</button>
+<button class="px-4 py-1.5 rounded-lg text-secondary text-sm font-medium hover:bg-surface-container-highest transition-colors">Invoices</button>
+<button class="px-4 py-1.5 rounded-lg text-secondary text-sm font-medium hover:bg-surface-container-highest transition-colors">Tax Forms</button>
+<button class="px-4 py-1.5 rounded-lg text-secondary text-sm font-medium hover:bg-surface-container-highest transition-colors">Receipts</button>
+</div>
+<div class="text-sm text-secondary font-medium">
+                        Showing <span class="text-primary font-bold">1-10</span> of 1,284
+                    </div>
+</div>
+<div class="overflow-x-auto px-6 pb-6">
+<table class="w-full text-left border-separate border-spacing-y-3">
+<thead>
+<tr class="text-secondary uppercase text-[10px] tracking-[0.2em] font-bold">
+<th class="px-6 py-4">Document Name</th>
+<th class="px-6 py-4">Date Uploaded</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody>
+<!-- Row 1 -->
+<tr class="bg-surface-container-lowest group hover:scale-[1.005] transition-transform duration-200">
+<td class="px-6 py-5 rounded-l-xl">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<p class="text-primary font-bold text-sm">Q3_Quarterly_Earnings_Statement.pdf</p>
+<p class="text-xs text-secondary font-medium">4.2 MB • Invoice</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm text-primary font-medium">Oct 24, 2023</p>
+<p class="text-xs text-secondary">09:42 AM</p>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-xs font-bold border-l-2 border-emerald-600">Verified</span>
+</td>
+<td class="px-6 py-5 text-right rounded-r-xl">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-low rounded-lg text-primary" title="View"><span class="material-symbols-outlined text-lg">visibility</span></button>
+<button class="p-2 hover:bg-surface-container-low rounded-lg text-primary" title="Download"><span class="material-symbols-outlined text-lg">download</span></button>
+<button class="p-2 hover:bg-error-container rounded-lg text-error" title="Delete"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface-container-lowest group hover:scale-[1.005] transition-transform duration-200">
+<td class="px-6 py-5 rounded-l-xl">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined">table_chart</span>
+</div>
+<div>
+<p class="text-primary font-bold text-sm">Corporate_Tax_Return_2022_FINAL.xlsx</p>
+<p class="text-xs text-secondary font-medium">12.8 MB • Tax Form</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm text-primary font-medium">Oct 22, 2023</p>
+<p class="text-xs text-secondary">02:15 PM</p>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-xs font-bold border-l-2 border-emerald-600">Verified</span>
+</td>
+<td class="px-6 py-5 text-right rounded-r-xl">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-low rounded-lg text-primary"><span class="material-symbols-outlined text-lg">visibility</span></button>
+<button class="p-2 hover:bg-surface-container-low rounded-lg text-primary"><span class="material-symbols-outlined text-lg">download</span></button>
+<button class="p-2 hover:bg-error-container rounded-lg text-error"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="bg-surface-container-lowest group hover:scale-[1.005] transition-transform duration-200">
+<td class="px-6 py-5 rounded-l-xl">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<div>
+<p class="text-primary font-bold text-sm">Cloud_Service_Usage_Bill_SEPT.pdf</p>
+<p class="text-xs text-secondary font-medium">1.1 MB • Invoice</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm text-primary font-medium">Oct 20, 2023</p>
+<p class="text-xs text-secondary">11:04 AM</p>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-surface-container-highest text-secondary rounded-full text-xs font-bold border-l-2 border-outline">Processing</span>
+</td>
+<td class="px-6 py-5 text-right rounded-r-xl">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-low rounded-lg text-primary"><span class="material-symbols-outlined text-lg">visibility</span></button>
+<button class="p-2 hover:bg-surface-container-low rounded-lg text-primary"><span class="material-symbols-outlined text-lg">download</span></button>
+<button class="p-2 hover:bg-error-container rounded-lg text-error"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface-container-lowest group hover:scale-[1.005] transition-transform duration-200">
+<td class="px-6 py-5 rounded-l-xl">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-error-container/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div>
+<p class="text-primary font-bold text-sm">Draft_Audit_Log_FY23.pdf</p>
+<p class="text-xs text-secondary font-medium">8.4 MB • Audit</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm text-primary font-medium">Oct 19, 2023</p>
+<p class="text-xs text-secondary">04:50 PM</p>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-error-container text-on-error-container rounded-full text-xs font-bold border-l-2 border-error">OCR Error</span>
+</td>
+<td class="px-6 py-5 text-right rounded-r-xl">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-low rounded-lg text-primary"><span class="material-symbols-outlined text-lg">visibility</span></button>
+<button class="p-2 hover:bg-surface-container-low rounded-lg text-primary"><span class="material-symbols-outlined text-lg">download</span></button>
+<button class="p-2 hover:bg-error-container rounded-lg text-error"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Section -->
+<div class="p-8 border-t border-outline-variant/10 flex justify-between items-center bg-surface-container-low">
+<button class="flex items-center gap-2 text-sm font-bold text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+                        Previous
+                    </button>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-xl bg-primary text-on-primary font-bold text-sm">1</button>
+<button class="w-10 h-10 rounded-xl hover:bg-surface-container-high font-medium text-sm transition-colors">2</button>
+<button class="w-10 h-10 rounded-xl hover:bg-surface-container-high font-medium text-sm transition-colors">3</button>
+<span class="w-10 h-10 flex items-center justify-center text-secondary">...</span>
+<button class="w-10 h-10 rounded-xl hover:bg-surface-container-high font-medium text-sm transition-colors">128</button>
+</div>
+<button class="flex items-center gap-2 text-sm font-bold text-secondary hover:text-primary transition-colors">
+                        Next
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Footer Asymmetry Decoration -->
+<div class="mt-16 grid grid-cols-12 gap-8 items-center opacity-40 grayscale">
+<div class="col-span-12 md:col-span-4">
+<div class="h-32 rounded-3xl bg-surface-container-high flex flex-col justify-end p-6 border-l-4 border-primary">
+<span class="material-symbols-outlined text-4xl mb-4 text-primary">auto_graph</span>
+<p class="text-xs font-bold uppercase tracking-widest text-primary">Systemic Accuracy Metrics</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-8 overflow-hidden h-32 rounded-3xl relative">
+<img alt="abstract data visualization" class="absolute inset-0 w-full h-full object-cover" data-alt="abstract artistic visualization of financial data flows with elegant lines and soft deep navy and emerald green gradients" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANcS8MtTp4kVqxKipsUP3Q50jn-u6xIRXP3RgKV17h18ZvG744Nws_6ThSzWT57cgClTO3OnNgm_LgWCJ6kc-uqIt-w5yl-yMciZ6xnwfbWXFXCj2l8_5iW-3c1eZNsb6M6f3yW4cjCDtd5NN5GhNCQeHYSkpVXfK-izEcoGgODk_myMJu6ZrrJll4eCUfwqZ3UpIikv4MXp9oGyBc35FCoOcmCSbKI29_rXIrNFaRdfODRYfpVtW1Z1bPK_BxYZY0pQrY8OfFfbd6"/>
+</div>
+</div>
+</main>
+</div>
+</body></html>

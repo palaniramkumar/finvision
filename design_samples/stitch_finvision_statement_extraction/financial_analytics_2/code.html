@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Sovereign Ledger - Analysis</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#041d30",
+                      "inverse-surface": "#2e3132",
+                      "on-error-container": "#93000a",
+                      "primary": "#001736",
+                      "surface-container-low": "#f3f4f5",
+                      "outline-variant": "#c4c6d0",
+                      "on-secondary-container": "#51677c",
+                      "on-background": "#191c1d",
+                      "on-tertiary-container": "#ab8e68",
+                      "background": "#f8f9fa",
+                      "tertiary-fixed-dim": "#e1c298",
+                      "on-secondary-fixed-variant": "#33495d",
+                      "primary-fixed": "#d6e3ff",
+                      "on-surface": "#191c1d",
+                      "surface-container-high": "#e7e8e9",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#594323",
+                      "primary-container": "#002b5c",
+                      "secondary": "#4b6176",
+                      "surface-variant": "#e1e3e4",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed-dim": "#aac7ff",
+                      "surface": "#f8f9fa",
+                      "on-primary-container": "#7594cb",
+                      "surface-container": "#edeeef",
+                      "surface-bright": "#f8f9fa",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed-dim": "#b2c9e2",
+                      "surface-tint": "#3f5f92",
+                      "secondary-container": "#cee5ff",
+                      "on-primary-fixed": "#001b3e",
+                      "on-tertiary-fixed": "#291800",
+                      "tertiary-fixed": "#ffddb2",
+                      "surface-container-highest": "#e1e3e4",
+                      "secondary-fixed": "#cee5ff",
+                      "outline": "#747780",
+                      "surface-dim": "#d9dadb",
+                      "on-error": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#aac7ff",
+                      "on-primary-fixed-variant": "#264779",
+                      "tertiary-container": "#3b280a",
+                      "on-secondary": "#ffffff",
+                      "tertiary": "#231400",
+                      "on-surface-variant": "#43474f",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Inter"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<!-- SideNavBar (Execution from JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#f8f9fa] dark:bg-[#001736] flex flex-col py-8 space-y-2 z-50">
+<div class="px-8 mb-10">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-lg" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<h1 class="text-lg font-bold text-[#001736] dark:text-white">Sovereign Ledger</h1>
+<p class="text-[10px] font-semibold uppercase tracking-widest text-slate-500">Financial Extraction</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="text-slate-500 dark:text-slate-400 py-3 px-8 hover:translate-x-1 font-['Inter'] text-sm tracking-wide uppercase font-semibold transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</div>
+</div>
+<div class="text-slate-500 dark:text-slate-400 py-3 px-8 hover:translate-x-1 font-['Inter'] text-sm tracking-wide uppercase font-semibold transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="paged_view">page_control</span>
+<span>Extraction</span>
+</div>
+</div>
+<div class="text-slate-500 dark:text-slate-400 py-3 px-8 hover:translate-x-1 font-['Inter'] text-sm tracking-wide uppercase font-semibold transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>Statements</span>
+</div>
+</div>
+<!-- Active State Implementation -->
+<div class="bg-white dark:bg-[#002b5c] text-[#001736] dark:text-[#ffddb2] rounded-r-full shadow-sm ml-0 mr-4 py-3 px-8 font-['Inter'] text-sm tracking-wide uppercase font-semibold transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="insights" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span>Analysis</span>
+</div>
+</div>
+<div class="text-slate-500 dark:text-slate-400 py-3 px-8 hover:translate-x-1 font-['Inter'] text-sm tracking-wide uppercase font-semibold transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Archive</span>
+</div>
+</div>
+</nav>
+<div class="pt-8 mt-auto border-t border-outline-variant/10">
+<div class="text-slate-500 dark:text-slate-400 py-3 px-8 hover:translate-x-1 font-['Inter'] text-sm tracking-wide uppercase font-semibold transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Help</span>
+</div>
+</div>
+<div class="text-slate-500 dark:text-slate-400 py-3 px-8 hover:translate-x-1 font-['Inter'] text-sm tracking-wide uppercase font-semibold transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="ml-64 flex-1 flex flex-col min-h-screen">
+<!-- TopAppBar (Execution from JSON) -->
+<header class="w-full sticky top-0 z-40 bg-slate-50/80 dark:bg-[#001736]/80 backdrop-blur-xl flex justify-between items-center px-8 py-4 shadow-[0_32px_64px_-12px_rgba(0,23,54,0.06)]">
+<div class="flex items-center gap-8">
+<h2 class="text-xl font-black tracking-tighter text-[#001736] dark:text-slate-100 uppercase">The Sovereign Ledger</h2>
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+<input class="bg-surface-container-low border-none rounded-xl py-2 pl-10 pr-4 text-sm w-64 focus:ring-1 focus:ring-primary/20" placeholder="Search analytics..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<button class="p-2 rounded-full hover:bg-slate-200/50 transition-colors">
+<span class="material-symbols-outlined text-slate-500" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-200/50 transition-colors">
+<span class="material-symbols-outlined text-slate-500" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary/10">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Close up portrait of a professional man in a dark suit with a clean and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl2M5waO6HlR0Eh-5nMoNQtWYUs5NMKdUYgglqRuyNYakpvwSymJK3zjZqmWspP2TfIDhXq_0ZrcS4nsAf-A_BjXkfK_2MN1yXZtda3mJzmBdQDhmLju4bGWX29OOdcjhcYye-3ytoINWSQTB8buoH0ZgCvwq83hx8FYWrnAioDnyaxeBJFegSCjjJRd6GWdSJRMYVg5_OvyBHmM_t7bWsOeFLhNY6VXXxA9S-aevRIe8dRquxgc5ZphFgD8jLz6OuRgrVh8E_bXq9"/>
+</div>
+</div>
+</header>
+<!-- Canvas Area -->
+<div class="p-8 space-y-12 max-w-7xl mx-auto w-full">
+<!-- Hero Market Pulse Header -->
+<section class="relative">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 border-b border-outline-variant/10 pb-8">
+<div class="space-y-2">
+<span class="text-sm font-bold uppercase tracking-[0.2em] text-on-primary-container/60">Portfolio Analysis</span>
+<h3 class="text-5xl font-black tracking-tighter text-primary leading-none">Fiscal Performance 2024</h3>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-6 py-3 bg-white border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="download">download</span>
+<span class="text-sm font-bold text-on-surface">Export CSV</span>
+</button>
+<button class="flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-primary to-primary-container text-white rounded-xl hover:opacity-90 transition-all shadow-lg active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="table_chart">table_chart</span>
+<span class="text-sm font-bold">Excel Report</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Key Metrics Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Large Summary Card -->
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-[0_32px_64px_-12px_rgba(0,23,54,0.06)] relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-16 -mt-16 group-hover:scale-110 transition-transform"></div>
+<div class="space-y-6 relative">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-black uppercase tracking-widest rounded-full">Aggregated Net Worth</span>
+<span class="text-primary font-bold text-sm">+12.4%</span>
+</div>
+<div class="space-y-1">
+<div class="text-6xl font-black tracking-tighter text-primary">$4,821,092</div>
+<p class="text-on-surface-variant text-sm font-medium">Verified across 14 extraction sources</p>
+</div>
+</div>
+</div>
+<!-- Secondary Metric -->
+<div class="bg-surface-container-low p-8 rounded-xl space-y-4">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="account_balance">account_balance</span>
+<div class="space-y-1">
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Liquid Assets</p>
+<div class="text-3xl font-black tracking-tighter text-primary">$1.2M</div>
+</div>
+<div class="w-full bg-outline-variant/20 h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-3/4"></div>
+</div>
+</div>
+<!-- Tertiary Metric -->
+<div class="bg-surface-container-low p-8 rounded-xl space-y-4">
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="trending_up">trending_up</span>
+<div class="space-y-1">
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Annual Yield</p>
+<div class="text-3xl font-black tracking-tighter text-primary">8.24%</div>
+</div>
+<div class="flex items-center gap-2 text-xs font-bold text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_upward">arrow_upward</span>
+<span>Outperforming Index</span>
+</div>
+</div>
+</section>
+<!-- Data Visualization Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+<!-- Main Trend Line Visualization -->
+<div class="lg:col-span-2 space-y-8">
+<div class="flex justify-between items-baseline">
+<h4 class="text-2xl font-black tracking-tighter">Extraction Trends</h4>
+<div class="flex gap-4 text-[10px] font-bold uppercase tracking-widest">
+<span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary"></span> Revenue</span>
+<span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span> Operational</span>
+</div>
+</div>
+<div class="h-80 w-full relative bg-surface-container-low rounded-2xl overflow-hidden p-8">
+<!-- Abstract Visualization Placeholder -->
+<div class="absolute inset-0 flex items-end justify-between px-8 pb-8 gap-4">
+<div class="flex-1 bg-primary/10 rounded-t-lg relative group transition-all hover:bg-primary/20" style="height: 60%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-primary text-white text-[10px] px-2 py-1 rounded transition-opacity">JAN</div>
+</div>
+<div class="flex-1 bg-primary/10 rounded-t-lg relative group transition-all hover:bg-primary/20" style="height: 75%"></div>
+<div class="flex-1 bg-primary/20 rounded-t-lg relative group transition-all hover:bg-primary/30" style="height: 45%"></div>
+<div class="flex-1 bg-primary/10 rounded-t-lg relative group transition-all hover:bg-primary/20" style="height: 85%"></div>
+<div class="flex-1 bg-primary/30 rounded-t-lg relative group transition-all hover:bg-primary/40" style="height: 95%"></div>
+<div class="flex-1 bg-primary/10 rounded-t-lg relative group transition-all hover:bg-primary/20" style="height: 70%"></div>
+<div class="flex-1 bg-primary/15 rounded-t-lg relative group transition-all hover:bg-primary/25" style="height: 55%"></div>
+<div class="flex-1 bg-primary/40 rounded-t-lg relative group transition-all hover:bg-primary/50" style="height: 100%"></div>
+</div>
+<div class="absolute top-8 right-8 text-on-surface-variant/40">
+<div class="border-b border-outline-variant/10 h-10 w-64"></div>
+<div class="border-b border-outline-variant/10 h-10 w-64"></div>
+<div class="border-b border-outline-variant/10 h-10 w-64"></div>
+<div class="border-b border-outline-variant/10 h-10 w-64"></div>
+</div>
+</div>
+</div>
+<!-- Extraction Sources Editorial List -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_32px_64px_-12px_rgba(0,23,54,0.06)] space-y-8">
+<h4 class="text-xl font-black tracking-tighter">Sources Analyzed</h4>
+<div class="space-y-6">
+<div class="flex justify-between items-center group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center group-hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+</div>
+<div>
+<p class="font-bold text-sm text-primary">Chase_Q3_Stmt.pdf</p>
+<p class="text-[10px] uppercase font-bold text-slate-400">September 14, 2023</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="flex justify-between items-center group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center group-hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<p class="font-bold text-sm text-primary">Goldman_Sachs_2024.xls</p>
+<p class="text-[10px] uppercase font-bold text-slate-400">August 29, 2023</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="flex justify-between items-center group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center group-hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="payments">payments</span>
+</div>
+<div>
+<p class="font-bold text-sm text-primary">Wealthfront_Tax_Docs.pdf</p>
+<p class="text-[10px] uppercase font-bold text-slate-400">July 02, 2023</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<button class="w-full py-4 border-2 border-dashed border-outline-variant rounded-xl text-xs font-bold uppercase tracking-widest text-slate-500 hover:bg-slate-50 transition-colors">
+                        Add New Data Source
+                    </button>
+</div>
+</section>
+<!-- Bottom Editorial Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-outline-variant/10">
+<div class="space-y-6">
+<h5 class="text-sm font-black uppercase tracking-widest text-on-primary-container/60">Risk Assessment</h5>
+<div class="flex items-start gap-6">
+<div class="w-2 h-32 bg-slate-100 rounded-full relative">
+<div class="absolute bottom-0 left-0 w-full bg-primary h-1/4 rounded-full"></div>
+</div>
+<div class="space-y-4">
+<p class="text-sm font-medium leading-relaxed text-on-surface-variant">Your current asset distribution indicates a <strong>Lower Risk</strong> profile compared to the previous quarter. The increased liquidity allows for aggressive re-investment strategies in emerging sectors.</p>
+<a class="text-xs font-bold uppercase tracking-widest text-primary hover:underline inline-flex items-center gap-2" href="#">
+                                View Strategy Breakdown <span class="material-symbols-outlined text-sm" data-icon="north_east">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-primary-container to-primary p-8 rounded-2xl relative overflow-hidden text-white flex items-center">
+<div class="space-y-4 relative z-10">
+<h5 class="text-xl font-bold">Predictive Ledger AI</h5>
+<p class="text-slate-300 text-sm max-w-xs">Based on extraction data, we anticipate a 4.2% growth in dividend yield over the next 30 days.</p>
+<button class="px-6 py-2 bg-tertiary-fixed text-on-tertiary-fixed font-bold text-xs uppercase tracking-widest rounded-lg">Run Forecast</button>
+</div>
+<div class="absolute top-1/2 right-[-20%] -translate-y-1/2 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+</div>
+</section>
+</div>
+</main>
+<!-- FAB Suppression as per rules: We are on an Analytics/Details screen, so we suppress the global FAB -->
+</body></html>

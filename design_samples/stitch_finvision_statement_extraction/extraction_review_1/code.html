@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Extraction &amp; Review | Precision Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "inverse-on-surface": "#f2f0f2",
+                "surface-tint": "#4f6073",
+                "on-secondary-fixed-variant": "#41474f",
+                "primary-container": "#1a2b3c",
+                "outline-variant": "#c4c6cd",
+                "surface-container-highest": "#e4e2e3",
+                "on-tertiary-container": "#619d7f",
+                "tertiary": "#001a0f",
+                "secondary-container": "#dde3ed",
+                "on-tertiary-fixed-variant": "#0e5138",
+                "primary-fixed": "#d2e4fb",
+                "on-background": "#1b1c1d",
+                "on-error": "#ffffff",
+                "surface-dim": "#dbd9db",
+                "outline": "#74777d",
+                "on-surface": "#1b1c1d",
+                "tertiary-fixed-dim": "#95d4b3",
+                "inverse-surface": "#303032",
+                "surface-container-high": "#e9e7e9",
+                "on-secondary": "#ffffff",
+                "on-tertiary-fixed": "#002114",
+                "on-surface-variant": "#44474c",
+                "surface-container-lowest": "#ffffff",
+                "secondary": "#595f67",
+                "surface-container": "#efedef",
+                "background": "#fbf9fa",
+                "tertiary-fixed": "#b1f0ce",
+                "on-secondary-container": "#5f656d",
+                "secondary-fixed-dim": "#c1c7d1",
+                "tertiary-container": "#00311f",
+                "on-primary": "#ffffff",
+                "on-primary-fixed": "#0b1d2d",
+                "primary": "#041627",
+                "primary-fixed-dim": "#b7c8de",
+                "on-primary-fixed-variant": "#38485a",
+                "surface-container-low": "#f5f3f4",
+                "on-tertiary": "#ffffff",
+                "on-error-container": "#93000a",
+                "on-secondary-fixed": "#161c23",
+                "error": "#ba1a1a",
+                "secondary-fixed": "#dde3ed",
+                "on-primary-container": "#8192a7",
+                "surface-variant": "#e4e2e3",
+                "inverse-primary": "#b7c8de",
+                "error-container": "#ffdad6",
+                "surface": "#fbf9fa",
+                "surface-bright": "#fbf9fa"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+              },
+              "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .glass-header { backdrop-filter: blur(20px); }
+        .custom-shadow { box-shadow: 0 40px 60px -5px rgba(27, 28, 29, 0.05); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 bg-slate-100 dark:bg-slate-900 w-64 z-50">
+<div class="px-8 mb-10">
+<h1 class="text-lg font-bold text-slate-900 dark:text-slate-50 font-headline">Ledger Admin</h1>
+<p class="text-xs text-slate-500 font-label">Precision Extract</p>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-transform scale-95 active:scale-100 font-label medium" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-emerald-700 dark:text-emerald-400 font-bold border-r-4 border-emerald-600 hover:bg-slate-200 dark:hover:bg-slate-800 transition-transform scale-95 active:scale-100 font-label medium" href="#">
+<span class="material-symbols-outlined" data-icon="split_screen" style="font-variation-settings: 'FILL' 1;">splitscreen</span>
+<span>Review</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-transform scale-95 active:scale-100 font-label medium" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-transform scale-95 active:scale-100 font-label medium" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>Archive</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-2">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-3 rounded-xl font-semibold text-sm mb-6 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                Upload Document
+            </button>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-transform scale-95 active:scale-100 font-label" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-transform scale-95 active:scale-100 font-label" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full flex justify-between items-center px-8 h-16 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl z-40">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50 font-headline">Precision Ledger</span>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-slate-400" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-container-low border-none rounded-full text-sm w-64 focus:ring-2 focus:ring-primary/10 transition-all" placeholder="Search extractions..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-fixed overflow-hidden">
+<img alt="User profile" data-alt="professional headshot of a financial analyst in a modern office setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMqj7P2tpTg08mW2SdlvUL9JNzQGcUJWAunOo-KEeYwpd2JkyjAlJIq0C-_2WsTuuOp7FinNBLWSUD73oRs6KpF3ceG9sGkcYVNxOTXqAv_iUodWeDvp0sQ81bN_F083qiQR7gfy7Xu7-2RiBXJeijkrKKvUt7qMz53A0M3MeTRu94VJyu6yMinP-JFUqPTsf4EBGyoZ7WIBdPFrUDiGHf1X66_leLJMf0xnS66b8ZQF-d4x6xu_dZdKWh3n0C0yaVURQzf2-JjhSl"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 flex overflow-hidden">
+<!-- PDF Viewer (Left Side) -->
+<section class="w-1/2 p-8 overflow-y-auto no-scrollbar bg-surface-container-low flex flex-col gap-6">
+<div class="flex justify-between items-center">
+<div>
+<h2 class="text-2xl font-extrabold font-headline tracking-tight">Q3_Statement_Final.pdf</h2>
+<p class="text-sm text-on-surface-variant font-label">Analyzed on Oct 24, 2023 • 98.4% Confidence</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 bg-surface-container-lowest rounded-lg text-primary hover:bg-white transition-all shadow-sm">
+<span class="material-symbols-outlined" data-icon="zoom_in">zoom_in</span>
+</button>
+<button class="p-2 bg-surface-container-lowest rounded-lg text-primary hover:bg-white transition-all shadow-sm">
+<span class="material-symbols-outlined" data-icon="zoom_out">zoom_out</span>
+</button>
+</div>
+</div>
+<!-- Mock PDF Content -->
+<div class="bg-surface-container-lowest rounded-xl p-12 aspect-[1/1.4] shadow-sm relative group overflow-hidden">
+<div class="flex justify-between border-b border-slate-100 pb-8 mb-8">
+<div class="space-y-1">
+<div class="h-6 w-32 bg-slate-100 rounded"></div>
+<div class="h-4 w-48 bg-slate-50 rounded"></div>
+</div>
+<div class="text-right space-y-1">
+<p class="text-xs font-bold uppercase tracking-widest text-slate-400">Statement #</p>
+<p class="text-lg font-headline font-bold">INV-99021-X</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="grid grid-cols-4 gap-4">
+<div class="col-span-2 h-4 bg-slate-100 rounded"></div>
+<div class="h-4 bg-slate-100 rounded"></div>
+<div class="h-4 bg-slate-100 rounded"></div>
+</div>
+<!-- Highlighted Area -->
+<div class="relative p-4 -mx-4 bg-tertiary-fixed/30 border-l-4 border-on-tertiary-container rounded-r-lg">
+<div class="grid grid-cols-4 gap-4">
+<div class="col-span-2 h-4 bg-on-tertiary-container/20 rounded"></div>
+<div class="h-4 bg-on-tertiary-container/20 rounded"></div>
+<div class="h-4 bg-on-tertiary-container/20 rounded"></div>
+</div>
+<div class="absolute -right-2 top-0 translate-x-full opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="bg-primary text-white text-[10px] px-2 py-1 rounded-full whitespace-nowrap">Extracted Value</div>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="col-span-2 h-4 bg-slate-100 rounded"></div>
+<div class="h-4 bg-slate-100 rounded"></div>
+<div class="h-4 bg-slate-100 rounded"></div>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="col-span-2 h-4 bg-slate-100 rounded"></div>
+<div class="h-4 bg-slate-100 rounded"></div>
+<div class="h-4 bg-slate-100 rounded"></div>
+</div>
+</div>
+<div class="absolute bottom-12 right-12 w-32 h-10 bg-slate-50 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-200">
+<span class="text-[10px] text-slate-300 font-bold uppercase tracking-widest">Signatory Area</span>
+</div>
+<!-- Visual link line (conceptually) -->
+<div class="absolute top-1/2 right-0 w-8 h-1 bg-gradient-to-r from-on-tertiary-container to-transparent opacity-40"></div>
+</div>
+</section>
+<!-- Data Table (Right Side) -->
+<section class="w-1/2 p-8 overflow-y-auto no-scrollbar bg-surface flex flex-col gap-8">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-xl font-bold font-headline">Review Extraction</h3>
+<p class="text-sm text-on-surface-variant">Review and edit identified line items before export.</p>
+</div>
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-bold rounded-sm font-label flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        HIGH CONFIDENCE
+                    </span>
+</div>
+<!-- Asymmetric Bento-like Data Grid -->
+<div class="space-y-4">
+<!-- Metadata Row -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-xl custom-shadow">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest block mb-2">Transaction Date</label>
+<input class="w-full text-body-md font-medium border-none p-0 focus:ring-0 bg-transparent" type="text" value="October 22, 2023"/>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl custom-shadow border-l-4 border-on-tertiary-container">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest block mb-2">Total Amount (USD)</label>
+<input class="w-full text-xl font-bold font-headline border-none p-0 focus:ring-0 bg-transparent text-primary" type="text" value="$14,240.50"/>
+</div>
+</div>
+<!-- Line Items Table -->
+<div class="bg-surface-container-lowest rounded-xl custom-shadow overflow-hidden">
+<div class="px-6 py-4 border-b border-surface-container-low flex justify-between items-center">
+<h4 class="text-sm font-bold font-headline">Line Items</h4>
+<button class="text-primary text-xs font-bold hover:underline">Add Entry</button>
+</div>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-6 py-3 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Description</th>
+<th class="px-6 py-3 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Category</th>
+<th class="px-6 py-3 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-right">Amount</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<tr class="group hover:bg-slate-50 transition-colors">
+<td class="px-6 py-4">
+<input class="w-full border-none p-0 text-sm focus:ring-0 bg-transparent" type="text" value="Enterprise Server Infrastructure"/>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-medium uppercase">IT Hardware</span>
+</td>
+<td class="px-6 py-4 text-right">
+<input class="w-20 text-right border-none p-0 text-sm focus:ring-0 bg-transparent font-semibold" type="text" value="8,400.00"/>
+</td>
+</tr>
+<tr class="group hover:bg-slate-50 transition-colors bg-tertiary-fixed/5">
+<td class="px-6 py-4">
+<input class="w-full border-none p-0 text-sm focus:ring-0 bg-transparent" type="text" value="Cloud Data Storage (Annual)"/>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-medium uppercase">SaaS</span>
+</td>
+<td class="px-6 py-4 text-right">
+<input class="w-20 text-right border-none p-0 text-sm focus:ring-0 bg-transparent font-semibold" type="text" value="5,240.50"/>
+</td>
+</tr>
+<tr class="group hover:bg-slate-50 transition-colors">
+<td class="px-6 py-4">
+<input class="w-full border-none p-0 text-sm focus:ring-0 bg-transparent" type="text" value="Consultancy Fee"/>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-medium uppercase">Professional SVCS</span>
+</td>
+<td class="px-6 py-4 text-right">
+<input class="w-20 text-right border-none p-0 text-sm focus:ring-0 bg-transparent font-semibold" type="text" value="600.00"/>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Confidence Summary -->
+<div class="bg-primary text-white p-6 rounded-xl flex items-center justify-between overflow-hidden relative">
+<div class="relative z-10">
+<p class="text-xs text-on-primary-container font-medium mb-1">Extraction Quality</p>
+<h4 class="text-xl font-bold font-headline">98.4% Confidence Score</h4>
+</div>
+<div class="relative z-10 flex gap-1">
+<div class="w-1.5 h-8 bg-on-tertiary-container rounded-full"></div>
+<div class="w-1.5 h-10 bg-on-tertiary-container rounded-full"></div>
+<div class="w-1.5 h-6 bg-on-tertiary-container rounded-full"></div>
+<div class="w-1.5 h-12 bg-on-tertiary-container rounded-full"></div>
+<div class="w-1.5 h-8 bg-on-tertiary-container rounded-full"></div>
+</div>
+<!-- Abstract glow -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-on-tertiary-container opacity-20 blur-3xl rounded-full"></div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="mt-auto flex justify-end gap-4 items-center">
+<button class="text-on-surface-variant font-bold text-sm hover:text-primary transition-colors px-6 py-3">Discard</button>
+<button class="bg-surface-container-high text-on-primary-container px-8 py-3 rounded-xl font-bold text-sm hover:bg-surface-container-highest transition-all">
+                        Export as CSV
+                    </button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-3 rounded-xl font-bold text-sm shadow-xl shadow-primary/10 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="check_circle">check_circle</span>
+                        Confirm Extraction
+                    </button>
+</div>
+</section>
+</div>
+</main>
+</body></html>

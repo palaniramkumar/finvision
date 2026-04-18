@@ -1,0 +1,50 @@
+/**
+ * FinVision Precision Ledger — synced from Stitch dashboard_upload + metric_institutional/DESIGN.md
+ */
+:root {
+  --color-primary: #041627;
+  --color-primary-container: #1a2b3c;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #8192a7;
+  --color-surface: #fbf9fa;
+  --color-background: #fbf9fa;
+  --color-surface-container-low: #f5f3f4;
+  --color-surface-container: #efedef;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #e9e7e9;
+  --color-surface-dim: #dbd9db;
+  --color-on-surface: #1b1c1d;
+  --color-on-surface-variant: #44474c;
+  --color-on-background: #1b1c1d;
+  --color-outline-variant: #c4c6cd;
+  --color-outline: #74777d;
+  --color-tertiary-fixed: #b1f0ce;
+  --color-on-tertiary-fixed-variant: #0e5138;
+  --color-tertiary-container: #00311f;
+  --color-on-tertiary-container: #619d7f;
+  --color-secondary-container: #dde3ed;
+  --color-on-secondary-container: #5f656d;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-primary-fixed: #d2e4fb;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-pill: 9999px;
+  --font-headline: 'Manrope', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --shadow-ambient: 0 32px 64px -12px rgba(27, 28, 29, 0.06);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass {
+    backdrop-filter: none !important;
+    background: var(--color-surface-container-lowest) !important;
+  }
+}

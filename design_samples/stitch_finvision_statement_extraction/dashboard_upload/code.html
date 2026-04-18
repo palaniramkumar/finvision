@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Precision Ledger | Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "inverse-on-surface": "#f2f0f2",
+                "surface-tint": "#4f6073",
+                "on-secondary-fixed-variant": "#41474f",
+                "primary-container": "#1a2b3c",
+                "outline-variant": "#c4c6cd",
+                "surface-container-highest": "#e4e2e3",
+                "on-tertiary-container": "#619d7f",
+                "tertiary": "#001a0f",
+                "secondary-container": "#dde3ed",
+                "on-tertiary-fixed-variant": "#0e5138",
+                "primary-fixed": "#d2e4fb",
+                "on-background": "#1b1c1d",
+                "on-error": "#ffffff",
+                "surface-dim": "#dbd9db",
+                "outline": "#74777d",
+                "on-surface": "#1b1c1d",
+                "tertiary-fixed-dim": "#95d4b3",
+                "inverse-surface": "#303032",
+                "surface-container-high": "#e9e7e9",
+                "on-secondary": "#ffffff",
+                "on-tertiary-fixed": "#002114",
+                "on-surface-variant": "#44474c",
+                "surface-container-lowest": "#ffffff",
+                "secondary": "#595f67",
+                "surface-container": "#efedef",
+                "background": "#fbf9fa",
+                "tertiary-fixed": "#b1f0ce",
+                "on-secondary-container": "#5f656d",
+                "secondary-fixed-dim": "#c1c7d1",
+                "tertiary-container": "#00311f",
+                "on-primary": "#ffffff",
+                "on-primary-fixed": "#0b1d2d",
+                "primary": "#041627",
+                "primary-fixed-dim": "#b7c8de",
+                "on-primary-fixed-variant": "#38485a",
+                "surface-container-low": "#f5f3f4",
+                "on-tertiary": "#ffffff",
+                "on-error-container": "#93000a",
+                "on-secondary-fixed": "#161c23",
+                "error": "#ba1a1a",
+                "secondary-fixed": "#dde3ed",
+                "on-primary-container": "#8192a7",
+                "surface-variant": "#e4e2e3",
+                "inverse-primary": "#b7c8de",
+                "error-container": "#ffdad6",
+                "surface": "#fbf9fa",
+                "surface-bright": "#fbf9fa"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .extraction-glow {
+            background: linear-gradient(135deg, rgba(177, 240, 206, 0.4) 0%, rgba(177, 240, 206, 0.1) 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-tertiary-fixed">
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 bg-slate-100 dark:bg-slate-900 h-screen w-64 z-40 transition-transform">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div>
+<h2 class="text-lg font-bold text-slate-900 dark:text-slate-50 leading-none">Ledger Admin</h2>
+<span class="text-xs text-slate-500 font-medium tracking-wide uppercase">Precision Extract</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-emerald-700 dark:text-emerald-400 font-bold border-r-4 border-emerald-600 scale-95 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">splitscreen</span>
+<span class="font-medium">Review</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-medium">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-medium">Archive</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-4">
+<button class="w-full flex items-center justify-center gap-2 bg-gradient-to-br from-primary to-primary-container text-on-primary py-3 px-4 rounded-xl font-bold shadow-lg shadow-primary/10 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">upload_file</span>
+<span>Upload Document</span>
+</button>
+<div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-medium">Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-medium">Sign Out</span>
+</a>
+</div>
+</div>
+</aside>
+<main class="ml-64 min-h-screen">
+<header class="sticky top-0 w-full flex justify-between items-center px-8 h-16 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl z-30">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary-fixed transition-all" placeholder="Search extractions, invoices, or entities..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="flex items-center gap-3 pl-6 border-l border-slate-200">
+<div class="text-right">
+<p class="text-sm font-bold text-slate-900 dark:text-slate-50 leading-none">Alexander Wright</p>
+<p class="text-xs text-slate-500">Senior Auditor</p>
+</div>
+<img alt="User profile" class="w-10 h-10 rounded-full border-2 border-surface-container-high object-cover" data-alt="professional headshot of a man in his 40s with a clean-cut look and neutral background for a corporate user profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6wVCQkOqQo7pE_q72t1msuJvhAZ5fDy751GHFdtgbW0CR8KomoAOkxApvdbqN2KzW46wBBMNugLg7jSF5Xc7Mby76xxHSBP02c9HoXZKTYio2sw1Nc6IAyggndUqtYIPxVk6fCy79GlNgmY4tvaLg08SvgvG520wUxI3KlQ6Vz0qruXalkpyEmbe7DBtJN26kWCEK-WWqGUzh3V97FMnGvVCl2iS0vijeSzXg6TU9Iw8Ovhkwx5XPeP_XcgbGIY90Oaky6ikQzCKE"/>
+</div>
+</div>
+</header>
+<section class="p-8 max-w-7xl mx-auto">
+<div class="mb-10">
+<h1 class="text-4xl font-extrabold tracking-tight text-primary mb-2">Precision Ledger</h1>
+<p class="text-on-surface-variant text-lg max-w-2xl">High-fidelity document extraction powered by architectural OCR precision. Manage your financial insights from one dashboard.</p>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<div class="bg-surface-container-lowest border border-outline-variant/15 rounded-full p-12 text-center group cursor-pointer hover:bg-surface-container transition-colors duration-500">
+<div class="max-w-md mx-auto">
+<div class="w-20 h-20 bg-primary-container/5 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'wght' 200;">cloud_upload</span>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-2">Drop your financial documents here</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">PDF, JPG, or PNG. Up to 50MB. Advanced OCR will automatically map fields into your ledger.</p>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-xl font-bold text-sm tracking-wide uppercase hover:shadow-xl hover:shadow-primary/20 transition-all">
+                                Select Files
+                            </button>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-xl font-bold text-primary">Recent Extractions</h2>
+<button class="text-sm font-semibold text-primary hover:underline underline-offset-4">View All Archive</button>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-6 rounded-xl flex items-center justify-between group hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 bg-tertiary-container text-on-tertiary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">INV-2023-9021_Apple_Inc.pdf</h4>
+<p class="text-sm text-on-surface-variant">Tax Invoice • Oct 24, 2023 • 1.2MB</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden md:block text-right">
+<p class="text-sm font-medium text-on-surface-variant">Confidence</p>
+<p class="font-bold text-emerald-700">99.8%</p>
+</div>
+<span class="px-4 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-bold uppercase tracking-wider">Ready</span>
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl flex items-center justify-between group hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Amazon_Web_Services_Receipt.pdf</h4>
+<p class="text-sm text-on-surface-variant">Utility Receipt • Oct 23, 2023 • 0.8MB</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden md:block text-right opacity-50">
+<p class="text-sm font-medium">Confidence</p>
+<p class="font-bold">--</p>
+</div>
+<span class="px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-on-secondary-container animate-pulse"></div>
+                                        Processing
+                                    </span>
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl flex items-center justify-between group hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-5 border-l-2 border-error ml-[-2px] pl-5">
+<div class="w-12 h-12 bg-error-container text-on-error-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Unstructured_Data_001.jpg</h4>
+<p class="text-sm text-on-surface-variant">Handwritten Note • Oct 22, 2023 • 4.5MB</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden md:block text-right text-error/60">
+<p class="text-sm font-medium">Confidence</p>
+<p class="font-bold">12.4%</p>
+</div>
+<span class="px-4 py-1.5 rounded-full bg-error-container text-on-error-container text-xs font-bold uppercase tracking-wider">Error</span>
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<div class="bg-primary text-on-primary rounded-full p-8 relative overflow-hidden group">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-white/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+<h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed">bolt</span>
+                            Monthly Usage
+                        </h3>
+<div class="space-y-6 relative z-10">
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="text-4xl font-extrabold tracking-tight">2,482</span>
+<span class="text-primary-fixed/60 text-sm">/ 5,000 pages</span>
+</div>
+<div class="w-full bg-primary-container h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary-fixed h-full w-[49%] rounded-full shadow-[0_0_15px_rgba(177,240,206,0.3)]"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-primary-container p-4 rounded-xl">
+<p class="text-primary-fixed/60 text-xs font-medium uppercase tracking-widest mb-1">Invoices</p>
+<p class="text-xl font-bold">1,821</p>
+</div>
+<div class="bg-primary-container p-4 rounded-xl">
+<p class="text-primary-fixed/60 text-xs font-medium uppercase tracking-widest mb-1">Receipts</p>
+<p class="text-xl font-bold">661</p>
+</div>
+</div>
+<button class="w-full py-3 bg-tertiary-fixed text-on-tertiary-fixed font-bold rounded-xl hover:opacity-90 transition-opacity">
+                                Upgrade Plan
+                            </button>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-full p-8 border border-outline-variant/10">
+<h3 class="text-lg font-bold text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600">verified</span>
+                            Quick Insights
+                        </h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-emerald-700 text-sm">trending_up</span>
+</div>
+<div>
+<p class="text-sm font-bold text-primary">Extraction speed increased</p>
+<p class="text-xs text-on-surface-variant">Your average processing time is down by 14% this week.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-sm">lightbulb</span>
+</div>
+<div>
+<p class="text-sm font-bold text-primary">New Entity Detected</p>
+<p class="text-xs text-on-surface-variant">"Global Logistics Ltd" has been added to your vendors.</p>
+</div>
+</div>
+</div>
+<div class="mt-8 p-6 bg-surface-container-lowest rounded-xl border border-outline-variant/20 extraction-glow">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest text-emerald-800 bg-emerald-200/50 px-2 py-0.5 rounded">High Confidence</span>
+<span class="material-symbols-outlined text-emerald-700 text-lg" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<p class="text-xs font-mono text-on-surface-variant mb-1">Extracted Value</p>
+<p class="text-lg font-extrabold text-primary">$42,912.00</p>
+<p class="text-[10px] text-on-surface-variant mt-2 italic">Matched with Purchase Order #8821</p>
+</div>
+</div>
+<div class="relative h-48 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="abstract data visualization with soft flowing blue and emerald green lines representing precision and flow of information" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC84-joWMABvNVA003v_GzcZizecocgY_VcHTQ9qZtH00bkeMLD8hJp3vO45PqKt5GEw6wt88beywxBYXgNG_OvBVZzdOjff3kXEyqLJX4wcW8CG-XQ9aC7i1jU_ROtXyqyncWLpOJhtC5_1fCEeqhXpp462Usyx9f8P10IAope6Gct87gxdbIwxQHFlVRhnpPTU5NVuhpti2mlDALLwXx3ir_UBa4vbAW_4e9aEhpDMejy5UlmtVKrkoqjuqgG6_TJ_fT9mmNkFaw7"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
+<div>
+<p class="text-on-primary font-bold">New: Batch Processing</p>
+<p class="text-on-primary/70 text-xs">Upload up to 500 documents at once via API.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

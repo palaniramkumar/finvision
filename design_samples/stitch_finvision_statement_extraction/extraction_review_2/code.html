@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Extraction &amp; Review | The Sovereign Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#041d30",
+                        "inverse-surface": "#2e3132",
+                        "on-error-container": "#93000a",
+                        "primary": "#001736",
+                        "surface-container-low": "#f3f4f5",
+                        "outline-variant": "#c4c6d0",
+                        "on-secondary-container": "#51677c",
+                        "on-background": "#191c1d",
+                        "on-tertiary-container": "#ab8e68",
+                        "background": "#f8f9fa",
+                        "tertiary-fixed-dim": "#e1c298",
+                        "on-secondary-fixed-variant": "#33495d",
+                        "primary-fixed": "#d6e3ff",
+                        "on-surface": "#191c1d",
+                        "surface-container-high": "#e7e8e9",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#594323",
+                        "primary-container": "#002b5c",
+                        "secondary": "#4b6176",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#aac7ff",
+                        "surface": "#f8f9fa",
+                        "on-primary-container": "#7594cb",
+                        "surface-container": "#edeeef",
+                        "surface-bright": "#f8f9fa",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#b2c9e2",
+                        "surface-tint": "#3f5f92",
+                        "secondary-container": "#cee5ff",
+                        "on-primary-fixed": "#001b3e",
+                        "on-tertiary-fixed": "#291800",
+                        "tertiary-fixed": "#ffddb2",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary-fixed": "#cee5ff",
+                        "outline": "#747780",
+                        "surface-dim": "#d9dadb",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#aac7ff",
+                        "on-primary-fixed-variant": "#264779",
+                        "tertiary-container": "#3b280a",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#231400",
+                        "on-surface-variant": "#43474f",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface overflow-hidden">
+<div class="flex h-screen overflow-hidden">
+<!-- SIDE NAVBAR -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#f8f9fa] dark:bg-[#001736] flex flex-col py-8 space-y-2 z-50">
+<div class="px-6 mb-8 flex items-center space-x-3">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div>
+<h1 class="text-lg font-bold text-[#001736] dark:text-white leading-none">Sovereign Ledger</h1>
+<p class="text-[10px] font-semibold tracking-widest uppercase text-slate-400 mt-1">Financial Extraction</p>
+</div>
+</div>
+<nav class="flex-1">
+<div class="space-y-1">
+<div class="text-slate-500 dark:text-slate-400 py-3 px-6 hover:translate-x-1 hover:text-[#001736] dark:hover:text-white transition-all cursor-pointer flex items-center space-x-3 font-['Inter'] text-sm tracking-wide uppercase font-semibold">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</div>
+<!-- Active State: Extraction -->
+<div class="bg-white dark:bg-[#002b5c] text-[#001736] dark:text-[#ffddb2] rounded-r-full shadow-sm ml-0 mr-4 py-3 px-6 cursor-pointer flex items-center space-x-3 font-['Inter'] text-sm tracking-wide uppercase font-semibold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">page_control</span>
+<span>Extraction</span>
+</div>
+<div class="text-slate-500 dark:text-slate-400 py-3 px-6 hover:translate-x-1 hover:text-[#001736] dark:hover:text-white transition-all cursor-pointer flex items-center space-x-3 font-['Inter'] text-sm tracking-wide uppercase font-semibold">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span>Statements</span>
+</div>
+<div class="text-slate-500 dark:text-slate-400 py-3 px-6 hover:translate-x-1 hover:text-[#001736] dark:hover:text-white transition-all cursor-pointer flex items-center space-x-3 font-['Inter'] text-sm tracking-wide uppercase font-semibold">
+<span class="material-symbols-outlined">insights</span>
+<span>Analysis</span>
+</div>
+<div class="text-slate-500 dark:text-slate-400 py-3 px-6 hover:translate-x-1 hover:text-[#001736] dark:hover:text-white transition-all cursor-pointer flex items-center space-x-3 font-['Inter'] text-sm tracking-wide uppercase font-semibold">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>Archive</span>
+</div>
+</div>
+</nav>
+<div class="mt-auto space-y-1 pt-8">
+<div class="text-slate-500 dark:text-slate-400 py-3 px-6 hover:translate-x-1 transition-all cursor-pointer flex items-center space-x-3 font-['Inter'] text-sm tracking-wide uppercase font-semibold">
+<span class="material-symbols-outlined">help_outline</span>
+<span>Help</span>
+</div>
+<div class="text-slate-500 dark:text-slate-400 py-3 px-6 hover:translate-x-1 transition-all cursor-pointer flex items-center space-x-3 font-['Inter'] text-sm tracking-wide uppercase font-semibold">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</div>
+</div>
+</aside>
+<!-- MAIN CONTENT -->
+<main class="flex-1 ml-64 flex flex-col h-screen">
+<!-- TOP APP BAR -->
+<header class="w-full sticky top-0 z-40 bg-slate-50/80 dark:bg-[#001736]/80 backdrop-blur-xl flex justify-between items-center px-8 py-4 w-full shadow-[0_32px_64px_-12px_rgba(0,23,54,0.06)]">
+<div class="flex items-center space-x-4">
+<div class="flex flex-col">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/70">Source Document</span>
+<h2 class="text-xl font-black tracking-tighter text-[#001736] dark:text-slate-100 uppercase">Q3_FISCAL_2024_REPORT.PDF</h2>
+</div>
+</div>
+<div class="flex items-center space-x-6">
+<div class="hidden md:flex items-center space-x-4 px-4 py-2 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface w-48" placeholder="Find field..." type="text"/>
+</div>
+<div class="flex items-center space-x-2">
+<button class="p-2 hover:bg-slate-200/50 dark:hover:bg-white/10 transition-colors cursor-pointer active:scale-95 duration-200 rounded-lg">
+<span class="material-symbols-outlined text-slate-500">notifications</span>
+</button>
+<button class="p-2 hover:bg-slate-200/50 dark:hover:bg-white/10 transition-colors cursor-pointer active:scale-95 duration-200 rounded-lg">
+<span class="material-symbols-outlined text-slate-500">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container/20">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Professional headshot of a financial analyst in a dark suit with a clean neutral background, soft professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9Y3eJh9i609-McqqAKvCkn58qnOsyb24rMlNvFvL6SH1mvJoApIGMvImXCeBfb98axqsynpk0B4Rnvozze3T1Wds2ImKQX1iPR67J0M1bTPdXen7z4KLl1DbeURexnSC87c26UdIe5fiq3Y4Or0zrV7Bu7NByQ8Crqsm6mhV8WYL_P3ZbpXNDOc54CkQu5KG77QObk5hDzCmT1R0RTHSSLUxUCINxOn19ZSzIv6emSwLQmPCQx6usUJ4OuLDCjyJvIB230TEkGfWJ"/>
+</div>
+</div>
+</div>
+</header>
+<!-- SPLIT SCREEN CANVAS -->
+<div class="flex-1 flex overflow-hidden">
+<!-- LEFT: PDF VIEWER -->
+<section class="w-1/2 bg-surface-container-low border-r border-outline-variant/10 flex flex-col">
+<div class="flex items-center justify-between px-6 py-3 bg-white/50 backdrop-blur-sm">
+<div class="flex items-center space-x-4">
+<span class="text-sm font-medium text-on-surface-variant">Page 1 of 42</span>
+<div class="flex items-center space-x-1">
+<button class="p-1 hover:bg-surface-container-high rounded"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="p-1 hover:bg-surface-container-high rounded"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+<div class="flex items-center space-x-3">
+<button class="p-1 hover:bg-surface-container-high rounded"><span class="material-symbols-outlined text-sm">zoom_in</span></button>
+<button class="p-1 hover:bg-surface-container-high rounded"><span class="material-symbols-outlined text-sm">zoom_out</span></button>
+<button class="p-1 hover:bg-surface-container-high rounded"><span class="material-symbols-outlined text-sm">print</span></button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-12 flex justify-center bg-slate-300/30">
+<!-- PDF MOCKUP -->
+<div class="w-full max-w-2xl bg-white shadow-[0_24px_48px_-12px_rgba(0,0,0,0.1)] p-16 min-h-[1000px] relative">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary-container/10"></div>
+<div class="mb-12 flex justify-between items-start">
+<div>
+<div class="h-8 w-48 bg-slate-100 mb-2"></div>
+<div class="h-4 w-32 bg-slate-50"></div>
+</div>
+<div class="h-16 w-16 bg-primary rounded-sm opacity-5"></div>
+</div>
+<div class="space-y-8">
+<div class="border-b-2 border-slate-900/5 pb-4">
+<div class="h-6 w-64 bg-slate-900/10 mb-4"></div>
+<div class="space-y-3">
+<div class="flex justify-between items-center relative group">
+<div class="h-4 w-40 bg-slate-200"></div>
+<div class="h-4 w-20 bg-slate-200"></div>
+<!-- Highlight indicator for extracted item -->
+<div class="absolute -inset-x-4 -inset-y-2 bg-primary-container/10 border-l-2 border-primary-container rounded opacity-100"></div>
+</div>
+<div class="flex justify-between items-center">
+<div class="h-4 w-48 bg-slate-100"></div>
+<div class="h-4 w-20 bg-slate-100"></div>
+</div>
+<div class="flex justify-between items-center relative group">
+<div class="h-4 w-36 bg-slate-200"></div>
+<div class="h-4 w-20 bg-slate-200"></div>
+<div class="absolute -inset-x-4 -inset-y-2 bg-primary-container/10 border-l-2 border-primary-container rounded opacity-100"></div>
+</div>
+</div>
+</div>
+<div class="space-y-3">
+<div class="h-4 w-full bg-slate-50"></div>
+<div class="h-4 w-full bg-slate-50"></div>
+<div class="h-4 w-3/4 bg-slate-50"></div>
+</div>
+<div class="mt-12">
+<div class="h-6 w-40 bg-slate-900/10 mb-6"></div>
+<div class="grid grid-cols-4 gap-4">
+<div class="h-20 bg-slate-50 rounded-sm"></div>
+<div class="h-20 bg-slate-50 rounded-sm"></div>
+<div class="h-20 bg-slate-50 rounded-sm"></div>
+<div class="h-20 bg-slate-50 rounded-sm"></div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-16 right-16 text-slate-300 font-mono text-[10px]">INTERNAL USE ONLY - 2024-Q3</div>
+</div>
+</div>
+</section>
+<!-- RIGHT: EXTRACTION TABLE/FORM -->
+<section class="w-1/2 bg-surface flex flex-col h-full">
+<div class="p-8 border-b border-outline-variant/10">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h3 class="text-2xl font-bold tracking-tight text-primary">Extracted Financials</h3>
+<p class="text-on-surface-variant/70 text-sm mt-1">Review and verify items before approving to ledger.</p>
+</div>
+<div class="flex space-x-2">
+<button class="flex items-center space-x-2 px-4 py-2 rounded-lg border border-outline-variant/30 hover:bg-surface-container-high transition-colors text-sm font-semibold">
+<span class="material-symbols-outlined text-sm">history</span>
+<span>Version Log</span>
+</button>
+<button class="flex items-center space-x-2 px-4 py-2 rounded-lg border border-outline-variant/30 hover:bg-surface-container-high transition-colors text-sm font-semibold">
+<span class="material-symbols-outlined text-sm">file_download</span>
+<span>Export CSV</span>
+</button>
+</div>
+</div>
+<!-- TABS -->
+<div class="flex space-x-8 border-b border-outline-variant/10">
+<button class="pb-3 border-b-2 border-primary text-primary font-bold text-sm">Balance Sheet</button>
+<button class="pb-3 text-on-surface-variant font-medium text-sm hover:text-primary transition-colors">Income Statement</button>
+<button class="pb-3 text-on-surface-variant font-medium text-sm hover:text-primary transition-colors">Cash Flow</button>
+<button class="pb-3 text-on-surface-variant font-medium text-sm hover:text-primary transition-colors">Notes</button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-8 space-y-12">
+<!-- BENTO GRID SECTION: KEY METRICS -->
+<div class="grid grid-cols-3 gap-6">
+<div class="col-span-1 bg-surface-container-low p-6 rounded-xl border border-transparent hover:border-primary-container/20 transition-all">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-secondary-container">Total Assets</span>
+<div class="text-2xl font-black text-primary mt-2">$4.28B</div>
+<div class="flex items-center text-xs text-green-600 font-bold mt-1">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+<span class="ml-1">+12.4% vs LY</span>
+</div>
+</div>
+<div class="col-span-1 bg-surface-container-low p-6 rounded-xl">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-secondary-container">Current Ratio</span>
+<div class="text-2xl font-black text-primary mt-2">2.14</div>
+<div class="text-xs text-on-surface-variant/60 font-medium mt-1">Optimal Range</div>
+</div>
+<div class="col-span-1 bg-primary text-white p-6 rounded-xl relative overflow-hidden">
+<div class="relative z-10">
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary-fixed opacity-70">Confidence Score</span>
+<div class="text-2xl font-black mt-2">98.4%</div>
+<div class="text-xs text-primary-fixed mt-1">Verified by Ledger AI</div>
+</div>
+<div class="absolute right-[-10px] bottom-[-10px] opacity-10">
+<span class="material-symbols-outlined text-7xl">verified</span>
+</div>
+</div>
+</div>
+<!-- EDITABLE TABLE -->
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<h4 class="font-bold text-lg text-primary tracking-tight">Current Assets</h4>
+<button class="text-primary font-bold text-xs uppercase tracking-widest flex items-center hover:opacity-70">
+<span class="material-symbols-outlined text-sm mr-1">add</span> Add Row
+                                </button>
+</div>
+<div class="w-full bg-white rounded-xl overflow-hidden shadow-sm border border-outline-variant/10">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/10">
+<th class="py-4 px-6 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Line Item</th>
+<th class="py-4 px-6 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Extracted Value</th>
+<th class="py-4 px-6 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Adjustment</th>
+<th class="py-4 px-6 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant text-right">Final Total</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="group hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-6">
+<div class="font-semibold text-primary">Cash &amp; Equivalents</div>
+<div class="text-[10px] text-on-surface-variant/60 font-mono">ID: 001-CASH</div>
+</td>
+<td class="py-4 px-6 font-mono text-sm">1,240,500.00</td>
+<td class="py-4 px-6">
+<input class="w-24 bg-transparent border-b-2 border-outline-variant/20 focus:border-primary focus:ring-0 text-sm font-mono transition-all" type="text" value="0.00"/>
+</td>
+<td class="py-4 px-6 font-mono font-bold text-primary text-right">$1,240,500.00</td>
+</tr>
+<tr class="group hover:bg-surface-container-lowest transition-colors bg-primary-container/5">
+<td class="py-4 px-6">
+<div class="font-semibold text-primary flex items-center">
+                                                    Short-term Investments
+                                                    <span class="material-symbols-outlined text-[10px] ml-2 text-primary" style="font-variation-settings: 'FILL' 1;">error</span>
+</div>
+<div class="text-[10px] text-on-surface-variant/60 font-mono">ID: 002-STI</div>
+</td>
+<td class="py-4 px-6 font-mono text-sm">845,000.00</td>
+<td class="py-4 px-6">
+<input class="w-24 bg-transparent border-b-2 border-primary focus:ring-0 text-sm font-mono text-error font-bold transition-all" type="text" value="-5,000.00"/>
+</td>
+<td class="py-4 px-6 font-mono font-bold text-primary text-right">$840,000.00</td>
+</tr>
+<tr class="group hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-6">
+<div class="font-semibold text-primary">Accounts Receivable</div>
+<div class="text-[10px] text-on-surface-variant/60 font-mono">ID: 003-AR</div>
+</td>
+<td class="py-4 px-6 font-mono text-sm">2,140,200.00</td>
+<td class="py-4 px-6">
+<input class="w-24 bg-transparent border-b-2 border-outline-variant/20 focus:border-primary focus:ring-0 text-sm font-mono transition-all" type="text" value="0.00"/>
+</td>
+<td class="py-4 px-6 font-mono font-bold text-primary text-right">$2,140,200.00</td>
+</tr>
+<tr class="group hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-6">
+<div class="font-semibold text-primary">Inventory Asset</div>
+<div class="text-[10px] text-on-surface-variant/60 font-mono">ID: 004-INV</div>
+</td>
+<td class="py-4 px-6 font-mono text-sm">956,700.00</td>
+<td class="py-4 px-6">
+<input class="w-24 bg-transparent border-b-2 border-outline-variant/20 focus:border-primary focus:ring-0 text-sm font-mono transition-all" type="text" value="0.00"/>
+</td>
+<td class="py-4 px-6 font-mono font-bold text-primary text-right">$956,700.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ALERTS / NOTICES -->
+<div class="bg-tertiary-fixed/30 p-6 rounded-xl border border-tertiary-fixed/50 flex space-x-4">
+<span class="material-symbols-outlined text-tertiary text-2xl">lightbulb</span>
+<div>
+<h5 class="font-bold text-tertiary">Extraction Suggestion</h5>
+<p class="text-sm text-tertiary/80 mt-1">Item "Short-term Investments" was extracted with a 5% margin of error due to overlapping text in the PDF. Please cross-reference with Page 14 (Notes to Account).</p>
+</div>
+</div>
+</div>
+<!-- FOOTER ACTIONS -->
+<div class="p-8 bg-white border-t border-outline-variant/10 flex justify-between items-center shadow-[0_-12px_24px_-10px_rgba(0,0,0,0.05)]">
+<button class="flex items-center space-x-2 px-6 py-3 rounded-lg text-primary font-bold hover:bg-primary-container/5 transition-all active:scale-95">
+<span class="material-symbols-outlined">refresh</span>
+<span>Regenerate Extraction</span>
+</button>
+<div class="flex space-x-4">
+<button class="px-6 py-3 rounded-lg border border-outline-variant text-on-surface-variant font-bold hover:bg-surface-container-low transition-all active:scale-95">
+                                Save Progress
+                            </button>
+<button class="px-8 py-3 rounded-lg bg-gradient-to-r from-primary to-primary-container text-white font-bold shadow-lg shadow-primary-container/20 hover:opacity-90 transition-all active:scale-95 flex items-center space-x-2">
+<span>Approve &amp; Finalize</span>
+<span class="material-symbols-outlined text-sm">check_circle</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>
