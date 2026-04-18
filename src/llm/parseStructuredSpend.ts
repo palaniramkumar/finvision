@@ -265,6 +265,7 @@ export function parseStructuredSpend(modelOutput: string): StructuredSpend | nul
       const date = normalizeIsoDate(t.date) || ''
       const description = String(t.description || '').trim()
       const amount = parseFiniteAmount(t.amount)
+      if (amount === null) continue
       const type = t.type === 'credit' ? 'credit' : 'debit'
 
       transactions.push({

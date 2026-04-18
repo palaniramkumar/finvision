@@ -14,7 +14,7 @@ import {
   buildMessages,
   buildMessagesForStatementSegment,
 } from './prompts'
-import { generateFromLoadedModel, forceReloadModel } from './session'
+import { generateFromLoadedModel } from './session'
 import type { ModelId } from './models'
 import { splitTextByPdfPageMarkers } from '../pdf/extractText'
 

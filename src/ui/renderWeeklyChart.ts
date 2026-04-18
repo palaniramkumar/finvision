@@ -9,7 +9,7 @@ function escapeHtml(s: string): string {
     .replace(/"/g, '&quot;')
 }
 
-function formatCurrency(amount: number, currencyCode: string | null): string {
+function formatMoney(amount: number, currencyCode: string | null): string {
   const code = currencyCode?.toUpperCase() || 'INR'
   const locale = code === 'INR' ? 'en-IN' : 'en-US'
   try {
