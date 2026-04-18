@@ -84,7 +84,7 @@ function updateCharCapTip(): void {
 function clearResultsUi(): void {
   $('#results').hidden = true
   $('#results-body').textContent = ''
-  
+
   const execSummary = document.getElementById('executive-summary')
   if (execSummary) execSummary.hidden = true
   const execContent = document.getElementById('executive-summary-content')
@@ -92,7 +92,7 @@ function clearResultsUi(): void {
 
   const chatTool = document.getElementById('chat-tool-container')
   if (chatTool) chatTool.hidden = true
-  
+
   // reset chat history to its default state
   const chatHistory = document.getElementById('chat-history')
   if (chatHistory) {
@@ -170,7 +170,7 @@ async function showArchivedAnalysisResults(doc: ArchiveDocument): Promise<void> 
 
   // Initialize chat session for archived document
   await initChatSession(doc.extractedText ?? '', doc.id, doc.structuredJson)
-  
+
   // Pre-emptively load the model for chat if it's different or not loaded
   if (webgpuSupported() && getLoadedModelId() !== selectedModelId) {
     void loadModel(selectedModelId).catch(err => console.warn('Background model load failed', err))
@@ -462,7 +462,7 @@ async function finishExtractSuccess(res: ExtractResult): Promise<void> {
   $('#meta-detail').textContent = `${res.pages} page(s) · ${res.charCount.toLocaleString()} characters extracted.${trunc}${ANALYZE_FOR_INSIGHTS_HINT}`
 
   const canAnalyze = webgpuSupported() && extractedText.length > 0
-  ;(document.getElementById('btn-analyze') as HTMLButtonElement).disabled = !canAnalyze
+    ; (document.getElementById('btn-analyze') as HTMLButtonElement).disabled = !canAnalyze
 
   currentStep = 'ready'
   updateSteps()
@@ -575,7 +575,7 @@ async function processSinglePdfUpload(file: File): Promise<void> {
     setExtractError(`Could not read PDF: ${msg}`)
     $('#chip-status').className = 'chip chip-busy'
     $('#chip-status').textContent = 'Error'
-    ;(document.getElementById('btn-analyze') as HTMLButtonElement).disabled = true
+      ; (document.getElementById('btn-analyze') as HTMLButtonElement).disabled = true
   }
 }
 
@@ -645,7 +645,7 @@ async function handlePdfFiles(files: File[]): Promise<void> {
   await refreshArchiveLists()
 
   if (ok.length === 0) {
-    ;(document.getElementById('btn-analyze') as HTMLButtonElement).disabled = true
+    ; (document.getElementById('btn-analyze') as HTMLButtonElement).disabled = true
     return
   }
 
@@ -668,7 +668,7 @@ async function handlePdfFiles(files: File[]): Promise<void> {
   $('#chip-status').className = 'chip chip-ready'
   $('#chip-status').textContent = 'Ready'
   const canAnalyze = webgpuSupported() && extractedText.length > 0
-  ;(document.getElementById('btn-analyze') as HTMLButtonElement).disabled = !canAnalyze
+    ; (document.getElementById('btn-analyze') as HTMLButtonElement).disabled = !canAnalyze
   currentStep = 'ready'
   updateSteps()
   updatePrimaryAnalyzeButtonLabel()
@@ -740,7 +740,7 @@ async function openArchiveDocument(id: string): Promise<void> {
     doc.status === 'analyzed' ? baseMeta : `${baseMeta}${ANALYZE_FOR_INSIGHTS_HINT}`
   setDropzoneCompact(true)
   const canAnalyze = webgpuSupported() && extractedText.length > 0
-  ;(document.getElementById('btn-analyze') as HTMLButtonElement).disabled = !canAnalyze
+    ; (document.getElementById('btn-analyze') as HTMLButtonElement).disabled = !canAnalyze
 
   if (doc.status === 'analyzed' && doc.markdownPreview && doc.markdownPreview.trim().length > 0) {
     await showArchivedAnalysisResults(doc)
@@ -786,7 +786,7 @@ async function onArchiveListClick(ev: MouseEvent): Promise<void> {
       setDropzoneCompact(false)
       currentStep = 'upload'
       updateSteps()
-      ;(document.getElementById('btn-analyze') as HTMLButtonElement).disabled = true
+        ; (document.getElementById('btn-analyze') as HTMLButtonElement).disabled = true
     }
     await refreshArchiveLists()
   }
@@ -800,7 +800,7 @@ async function runAnalyze(): Promise<void> {
   currentStep = 'analyze'
   updateSteps()
   $('#progress-card').hidden = false
-  ;(document.getElementById('btn-analyze') as HTMLButtonElement).disabled = true
+    ; (document.getElementById('btn-analyze') as HTMLButtonElement).disabled = true
   const cfg = MODEL_CONFIG[selectedModelId]
   setProgress(0, `Loading ${cfg.progressLabel}…`, `First visit may download ${cfg.approxSizeHint}; wait for the progress bar. Later visits reuse the cache.`)
 
@@ -868,7 +868,7 @@ async function runAnalyze(): Promise<void> {
     }
     let execMd = ''
     let detailMd = markdown
-    
+
     const splitRegex = /\\n##\\s+(Notable transactions|Risks or anomalies|Disclaimer)/i
     const match = markdown.match(splitRegex)
     if (match && match.index !== undefined) {
@@ -890,14 +890,14 @@ async function runAnalyze(): Promise<void> {
     }
 
     await initChatSession(extractedText, currentArchiveId || undefined, structured ? JSON.stringify(structured) : undefined)
-    
+
     const chatTool = document.getElementById('chat-tool-container')
     if (chatTool) chatTool.hidden = false
-    
+
     const chatInput = document.getElementById('chat-input') as HTMLInputElement | null
     const chatSubmit = document.getElementById('chat-submit') as HTMLButtonElement | null
     if (chatSubmit && chatInput) {
-       chatSubmit.disabled = false
+      chatSubmit.disabled = false
     }
 
     if (chartWrap) chartWrap.innerHTML = renderWeeklyChartHtml(structured, chartJsonDiagnostics)
@@ -930,7 +930,7 @@ async function runAnalyze(): Promise<void> {
     $('#results-body').textContent = ''
     const chartErr = document.getElementById('weekly-chart-wrap')
     if (chartErr) chartErr.innerHTML = ''
-    ;(document.getElementById('btn-analyze') as HTMLButtonElement).disabled = false
+      ; (document.getElementById('btn-analyze') as HTMLButtonElement).disabled = false
     currentStep = 'ready'
     updateSteps()
     if (currentArchiveId) {
@@ -947,8 +947,8 @@ async function runAnalyze(): Promise<void> {
   } finally {
     clearProgressSegmentSub()
     $('#progress-card').hidden = true
-    ;(document.getElementById('btn-analyze') as HTMLButtonElement).disabled =
-      !webgpuSupported() || !extractedText
+      ; (document.getElementById('btn-analyze') as HTMLButtonElement).disabled =
+        !webgpuSupported() || !extractedText
   }
 }
 
@@ -992,18 +992,18 @@ function bind(): void {
     input.value = ''
   })
 
-  ;['dragenter', 'dragover'].forEach((ev) => {
-    drop.addEventListener(ev, (e) => {
-      e.preventDefault()
-      drop.classList.add('dragover')
+    ;['dragenter', 'dragover'].forEach((ev) => {
+      drop.addEventListener(ev, (e) => {
+        e.preventDefault()
+        drop.classList.add('dragover')
+      })
     })
-  })
-  ;['dragleave', 'drop'].forEach((ev) => {
-    drop.addEventListener(ev, (e) => {
-      e.preventDefault()
-      drop.classList.remove('dragover')
+    ;['dragleave', 'drop'].forEach((ev) => {
+      drop.addEventListener(ev, (e) => {
+        e.preventDefault()
+        drop.classList.remove('dragover')
+      })
     })
-  })
   drop.addEventListener('drop', (e) => {
     const pdfs = Array.from(e.dataTransfer?.files ?? []).filter((f) => f.type === 'application/pdf')
     if (pdfs.length) void handlePdfFiles(pdfs)
@@ -1054,7 +1054,7 @@ function bind(): void {
     $('#meta-card').hidden = true
     clearResultsUi()
     resetChatSession()
-    ;(document.getElementById('btn-analyze') as HTMLButtonElement).disabled = true
+      ; (document.getElementById('btn-analyze') as HTMLButtonElement).disabled = true
   })
 
   $('#pdf-password-unlock').addEventListener('click', () => void tryUnlockPdfWithPassword())
@@ -1076,7 +1076,7 @@ function bind(): void {
     if (ev.key !== 'Escape') return
     const modal = document.getElementById('pdf-password-modal')
     if (modal && !modal.hidden) {
-      ;(document.getElementById('pdf-password-cancel') as HTMLButtonElement).click()
+      ; (document.getElementById('pdf-password-cancel') as HTMLButtonElement).click()
     }
   })
 
@@ -1113,7 +1113,7 @@ function bind(): void {
     const botText = document.createElement('div')
     botText.className = 'chat-message__bubble'
     botText.innerHTML = '<span class="analysis-placeholder__dots inline-block ml-1"><span></span><span></span><span></span></span>' // typing indicator
-    
+
     botBubble.appendChild(botAvatar)
     botBubble.appendChild(botText)
     chatHistory.appendChild(botBubble)
@@ -1128,7 +1128,7 @@ function bind(): void {
       }
 
       await sendChatMessage(
-        userMessage, 
+        userMessage,
         async (chunk) => {
           streamedContent += chunk
           // use marked for fast parsing of streamed chunk
@@ -1154,10 +1154,60 @@ function bind(): void {
   })
 }
 
+function checkSystemMemory(): { ok: boolean; ram?: number } {
+  // navigator.deviceMemory returns approximate GiB (0.5, 1, 2, 4, 8...).
+  // Note: Most browsers cap this at 8 to prevent fingerprinting.
+  const ram = (navigator as any).deviceMemory
+  if (ram !== undefined && ram < 16) {
+    return { ok: false, ram }
+  }
+  return { ok: true, ram }
+}
+
+function applyMemoryRestriction(): void {
+  const { ok, ram } = checkSystemMemory()
+  if (ok) return
+
+  // Disable upload buttons
+  const btnPick = document.getElementById('btn-pick') as HTMLButtonElement | null
+  const btnSidebar = document.getElementById('btn-sidebar-upload') as HTMLButtonElement | null
+  const dropzone = document.getElementById('dropzone')
+
+  if (btnPick) btnPick.disabled = true
+  if (btnSidebar) btnSidebar.disabled = true
+
+  // Show error in dropzone
+  if (dropzone) {
+    const originalContent = dropzone.innerHTML
+    dropzone.classList.add('dropzone--error')
+    dropzone.innerHTML = `
+      <div class="dropzone-icon dropzone-hero__icon" aria-hidden="true">
+        <span class="material-symbols-outlined dropzone-hero__glyph" style="color: var(--color-error)">memory</span>
+      </div>
+      <h2 style="color: var(--color-error)">High memory requirement</h2>
+      <p>This local AI tool requires at least <strong>16GB of RAM</strong> to run models safely in your browser. Your device reports <strong>${ram}GB</strong>.</p>
+      <p class="text-sm opacity-70">Note: Some browsers cap this report at 8GB for privacy. If you are certain you have 16GB+, you can bypass this check.</p>
+      <button type="button" class="btn btn-ghost" id="btn-bypass-ram" style="margin-top: 1rem; text-decoration: underline;">Bypass check and enable upload</button>
+    `
+
+    document.getElementById('btn-bypass-ram')?.addEventListener('click', () => {
+      dropzone.innerHTML = originalContent
+      dropzone.classList.remove('dropzone--error')
+      if (btnPick) btnPick.disabled = false
+      if (btnSidebar) btnSidebar.disabled = false
+      // Re-bind the pick button since we replaced the HTML
+      document.getElementById('btn-pick')?.addEventListener('click', () => {
+        document.getElementById('file-input')?.click()
+      })
+    })
+  }
+}
+
 renderShell()
 setWebGpuPill()
 setView('dashboard')
 updateSteps()
 updatePrimaryAnalyzeButtonLabel()
 bind()
+applyMemoryRestriction()
 void refreshArchiveLists()
